@@ -1,0 +1,38 @@
+public class FrequencyAnlysis
+{
+  public static void cipherTest()
+      {
+          //Initialize arrays for the characters in the alphabet and a corresponding integer array that will hold
+          //the values for each character
+          String alph = "abcdefghijklmnopqrstuvwxyz";
+          char[] alpha = alph.toCharArray();
+          int[] alphaNumber = new int[26];
+
+
+          String subtext = "Five score years ago, a great American, in whose symbolic";
+          subtext = subtext.trim();
+          subtext = subtext.toLowerCase();
+          char[] c = subtext.toCharArray();
+          int size = c.length;
+          int i = 0, j = 0, counter = 0;
+
+
+          for(i = 0; i < alpha.length; i++)
+          {
+              counter = 0;
+              for(j = 0; j < size; j++)
+              {
+                  if(alpha[i] == c[j])
+                  {
+                      counter++;
+                  }
+
+                  if(j == size-1)
+                  {
+                      alphaNumber[i] = counter;
+                  }
+              }
+              System.out.println(alpha[i] + ": " + alphaNumber[i]);
+          }
+      }
+  }
